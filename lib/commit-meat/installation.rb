@@ -1,7 +1,7 @@
 module CommitMeat
   module Installation
 
-    HOOK_PATH = File.join '.git', 'hooks', 'pre-commit'
+    HOOK_PATH = File.join '.git', 'hooks', 'prepare-commit-msg'
     HOOK_DIR  = File.join '.git', 'hooks'
     HOOK_CONTENT = <<END
 #!/bin/sh

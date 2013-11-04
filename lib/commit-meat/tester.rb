@@ -6,6 +6,16 @@ module CommitMeat
 
   class Tester
 
+    def initialize
+      run_tests
+    rescue ArgumentError
+      raise NoRepositoryError.new
+    end
+
+    def run_tests
+    rescue Git::GitExecuteError
+      false
+    end
 
   end
 end
