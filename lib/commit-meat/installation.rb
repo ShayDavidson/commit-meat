@@ -23,15 +23,15 @@ END
 
       File.open(HOOK_PATH, 'w') {|f| f.write(HOOK_CONTENT) }
       FileUtils.chmod 0755, HOOK_PATH
-      puts "Installed Commit-Mear hook as:".green
+      puts "Installed Commit-Meat hook as:".green
       puts "  -> #{File.expand_path(HOOK_PATH)}".green
-      puts "(To remove later run: `meat --uninstall`)."
+      puts "(To remove later run: `commit-meat --uninstall`)."
     end
 
     def self.uninstall
       if File.exists? HOOK_PATH
         FileUtils.rm HOOK_PATH
-        puts "Uninstalled #{HOOK_PATH}".green
+        puts "Uninstalled Commit-Meat for this Git repository.".green
       else
         puts "Commit-Meat is not enabled for this directory, nothing was uninstalled.".yellow
       end
