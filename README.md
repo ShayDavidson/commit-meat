@@ -7,17 +7,15 @@ A gem forcing you to write better commit messages.
 
 ## Installation
 
-Simply install the gem once by
+Simply __install__ the gem once by:
 
     `gem install commit-meat`
 
-and install Commit-Meat in any Git repository you want it to work by
+and __install__ Commit-Meat in any Git repository you want it to work by:
 
     `commit-meat --install`
 
----
-
-To remove Commit-Meat run
+To __remove__ Commit-Meat run:
 
     `commit-meat --uninstall`
 

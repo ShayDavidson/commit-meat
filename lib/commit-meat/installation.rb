@@ -5,7 +5,7 @@ module CommitMeat
     HOOK_DIR  = File.join '.git', 'hooks'
     HOOK_CONTENT = <<END
 #!/bin/sh
-meat --run
+commit-meat --run
 END
 
     def self.install
