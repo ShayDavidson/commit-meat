@@ -1,6 +1,6 @@
 require_relative './commit-meat/installation'
 require_relative './commit-meat/tester'
-require_relative 'commit-meat/version'
+require_relative './commit-meat/version'
 require 'choice'
 require 'colored'
 

@@ -8,6 +8,7 @@ module CommitMeat
 
     def initialize
       run_tests
+      puts 'hello'.red
     rescue ArgumentError
       raise NoRepositoryError.new
     end

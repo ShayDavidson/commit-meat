@@ -13,6 +13,10 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/iic-ninjas/commit-meat'
   s.license     = 'MIT'
 
+  s.files         = `git ls-files`.split("\n") - ["Gemfile.lock"]
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ['lib']
+
   s.add_runtime_dependency 'git'
   s.add_runtime_dependency 'colored'
   s.add_runtime_dependency 'choice'

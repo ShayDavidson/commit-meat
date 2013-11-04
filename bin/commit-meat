@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
 begin
-  require '../lib/commit-meat'
+  require 'commit-meat'
 rescue LoadError
   require 'rubygems'
-  require '../lib/commit-meat'
+  require 'commit-meat'
 end
 
 include CommitMeat
