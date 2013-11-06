@@ -4,14 +4,12 @@ PATH
     commit-meat (0.0.1)
       choice
       colored
-      git
 
 GEM
   remote: http://rubygems.org/
   specs:
     choice (0.1.6)
     colored (1.2)
-    git (1.2.6)
 
 PLATFORMS
   ruby

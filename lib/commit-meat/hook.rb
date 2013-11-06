@@ -1,5 +1,3 @@
-require 'git'
-
 module CommitMeat
 
   COMMIT_MESSAGE_HOOK = <<END
