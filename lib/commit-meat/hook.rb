@@ -17,4 +17,4 @@ end
 message_file = ARGV[0]
 message = File.read(message_file).strip
 
-assert_with_message('Single word commit messages are not allowed.', message.split.size > 1)
+assert_with_message(message.split.size > 1, 'Single word commit messages are not allowed.')
