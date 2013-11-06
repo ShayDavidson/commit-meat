@@ -1,11 +1,9 @@
-require 'commit-meat/hook'
-
 module CommitMeat
   module Installation
 
     HOOK_PATH = File.join '.git', 'hooks', 'commit-msg'
     HOOK_DIR  = File.join '.git', 'hooks'
-    HOOK_CONTENT = CommitMeat::COMMIT_MESSAGE_HOOK
+    HOOK_CONTENT = File.open('lib/commit-meat/hook.rb')
 
     def self.install
       if not File.directory?('.git')
