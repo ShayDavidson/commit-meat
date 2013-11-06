@@ -9,6 +9,7 @@ message = File.read(message_file)
 
 if message.length == 1
   puts "Your commit message cannot be a single word".red
+  exit 1
 end
 
 END
