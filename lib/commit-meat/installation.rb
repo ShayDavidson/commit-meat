@@ -3,7 +3,7 @@ module CommitMeat
 
     HOOK_PATH = File.join '.git', 'hooks', 'commit-msg'
     HOOK_DIR  = File.join '.git', 'hooks'
-    HOOK_CONTENT = File.open('lib/commit-meat/hook.rb')
+    HOOK_CONTENT = File.open('lib/commit-meat/hook.rb').read
 
     def self.install
       if not File.directory?('.git')
