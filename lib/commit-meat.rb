@@ -22,9 +22,7 @@ module CommitMeat
 
   def self.fail_with_message(messages)
     puts "There's NO MEAT - did not commit.".red
-    messages.each do
-      puts message.yellow
-    end
+    messages.each { |message| puts message.yellow }
     exit 1
   end
 

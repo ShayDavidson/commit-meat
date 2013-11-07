@@ -2,6 +2,8 @@ module CommitMeat
 
   class Tester
 
+    attr_reader :failure_messages
+
     def initialize(message)
       @message = message
       @failure_messages = []
