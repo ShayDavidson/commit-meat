@@ -27,13 +27,6 @@ Choice.options do
     action { CommitMeat::Installation::uninstall }
   end
 
-  option :run do
-    short '-r'
-    long '--run'
-    desc "Run Commit-Meat's commit-msg hook."
-    action { CommitMeat::run() }
-  end
-
   option :version do
     short '-v'
     long '--version'
