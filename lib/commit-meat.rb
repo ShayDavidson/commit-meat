@@ -11,6 +11,7 @@ module CommitMeat
     message = File.read(message_file).strip
     puts message.green
     Tester.new(message)
+    puts 'erm'
     exit 1
   end
 
