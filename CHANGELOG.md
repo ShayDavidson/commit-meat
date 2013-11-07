@@ -1,5 +1,6 @@
 _0.0.3_
-* Now using a proper ruby script.
+* Now using a proper ruby Tester file.
+* Fixed typos.
 
 __0.0.2__
 * Fixed an issue with hook path.

@@ -4,32 +4,30 @@ module CommitMeat
 
     def initialize(message)
       @message = message
+      @failure_messages = []
+    end
+
+    def failed?
+      @failure_messages.any?
     end
 
     def test
+      test_for_singular_words
+    end
 
+    private
+
+    # tests
+
+    def test_for_singular_words
+      test_for(@message.split.size > 1, "Single word commit messages are not allowed.")
+    end
+
+    # helpers
+
+    def test_for(condition_met, failure_message)
+      @failure_messages << failure_message unless condition_met
     end
 
   end
 end
-
-#
-#begin
-#  require 'commit-meat'
-#rescue LoadError
-#  require 'rubygems'
-#  require 'commit-meat'
-#end
-#
-#def assert_with_message(condition, msg)
-#  unless condition
-#    puts "There's NO MEAT - did not commit.".red
-#    puts msg.yellow
-#    exit 1
-#  end
-#end
-#
-#message_file = ARGV[0]
-#message = File.read(message_file).strip
-#
-#assert_with_message(message.split.size > 1, 'Single word commitd messages are not allowed.')
