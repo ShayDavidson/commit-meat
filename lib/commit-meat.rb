@@ -3,6 +3,7 @@ require 'commit-meat/version'
 require 'commit-meat/tester'
 require 'choice'
 require 'colored'
+require 'yaml'
 
 module CommitMeat
 
