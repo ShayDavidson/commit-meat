@@ -1,5 +1,4 @@
 _0.0.3_
-* Now using a proper ruby Tester file.
 * Fixed typos.
 
 __0.0.2__

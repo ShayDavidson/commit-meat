@@ -2,6 +2,8 @@ module CommitMeat
 
   class Tester
 
+    extend Tests
+
     attr_reader :failure_messages
 
     def initialize(message)
@@ -14,21 +16,24 @@ module CommitMeat
     end
 
     def test
-      test_for_singular_words
+      check_if :has_only_one_word,  "Single word commit messages are not allowed."
+      check_if :includes_bad_words, "Bad words %"
     end
 
-    private
-
-    # tests
-
-    def test_for_singular_words
-      test_for(@message.split.size > 1, "Single word commit messages are not allowed.")
+    def check_if(bad_commit_test, failure_message)
+      @failure_messages << failure_message unless send(bad_commit_test)
     end
 
-    # helpers
+  end
 
-    def test_for(condition_met, failure_message)
-      @failure_messages << failure_message unless condition_met
+  module Tests
+
+    def has_only_one_word
+      @message.split.size > 1
+    end
+
+    def includes_bad_words
+      true
     end
 
   end
