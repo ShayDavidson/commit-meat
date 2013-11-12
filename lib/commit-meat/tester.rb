@@ -19,15 +19,15 @@ module CommitMeat
     end
 
     def check_if(bad_commit_test, failure_message)
-      unless send(bad_commit_test)
+      if send(bad_commit_test)
         @failure_messages << failure_message
       end
     end
 
-    # tests
+    ## tests
 
     def has_only_one_word
-      @message.split.size > 1
+      @message.split.size == 1
     end
 
     def includes_bad_words
