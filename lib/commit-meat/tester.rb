@@ -2,8 +2,6 @@ module CommitMeat
 
   class Tester
 
-    extend Tests
-
     attr_reader :failure_messages
 
     def initialize(message)
@@ -26,9 +24,7 @@ module CommitMeat
       end
     end
 
-  end
-
-  module Tests
+    # tests
 
     def has_only_one_word
       @message.split.size > 1
@@ -46,4 +42,5 @@ module CommitMeat
     end
 
   end
+
 end

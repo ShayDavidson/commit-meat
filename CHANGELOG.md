@@ -1,3 +1,6 @@
+_0.0.4_
+* Fixed installation error.
+
 _0.0.3_
 * Fixed typos.
 
