@@ -1,3 +1,8 @@
+_0.0.5_
+* Added warnings which do not fail the commit.
+* Changed bad words test to be warning.
+* Added white list to bad words (currently including commonly used words such as `class` or `asset`).
+
 _0.0.4_
 * Fixed installation error.
 

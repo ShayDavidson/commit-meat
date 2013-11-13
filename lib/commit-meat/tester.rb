@@ -2,27 +2,47 @@ module CommitMeat
 
   class Tester
 
-    attr_reader :failure_messages
+    attr_reader :failure_messages, :warning_messages
 
     def initialize(message)
       @message = message
       @failure_messages = []
+      @warning_messages = []
     end
 
-    def failed?
+    def has_messages?
+      has_warnings? || has_failures?
+    end
+
+    def has_warnings?
+      @warning_messages.any?
+    end
+
+    def has_failures?
       @failure_messages.any?
     end
 
     def test
-      check_if :has_only_one_word,  "Single word commit messages are not allowed."
-      check_if :includes_bad_words, "Bad words are not allowed in commit messages."
+      fail_if :has_only_one_word,  "A single word, really?"
+      warn_if :includes_bad_words, "[gets shocked by a V-chip]"
     end
 
-    def check_if(bad_commit_test, failure_message)
-      if send(bad_commit_test)
-        @failure_messages << failure_message
+    private
+
+    def fail_if(test, failure_message)
+      test_if(test, failure_message, @failure_messages)
+    end
+
+    def warn_if(test, warning_message)
+      test_if(test, warning_message, @warning_messages)
+    end
+
+    def test_if(test, message, message_box)
+      if send(test)
+        message_box << message
       end
     end
+
 
     ## tests
 
