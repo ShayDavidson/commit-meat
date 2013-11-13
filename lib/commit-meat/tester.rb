@@ -52,15 +52,19 @@ module CommitMeat
 
     def includes_bad_words
       bad_words = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'config/bad_words.yml'))
-      bad_words_found = []
+      bad_words_whitelist = YAML::load_file(File.join(File.dirname(File.expand_path(__FILE__)), 'config/bad_words_whitelist.yml'))
 
-      bad_words.each do |word|
-        bad_words_found << word if @message.include?(word)
+      words_in_message = @message.split
+
+      bad_words.any? do |bad_word|
+        words_in_message.any? do |word|
+          if word.include?(bad_word)
+            !bad_words_whitelist.any? { |whitelist_word| word.include?(whitelist_word) }
+          end
+        end
       end
 
-      bad_words_found.any?
     end
 
   end
-
 end
